@@ -45,7 +45,9 @@
                 <RowDefinition Height="20*"/>
                 <RowDefinition Height="80*" />
             </Grid.RowDefinitions>
-            <Rectangle Grid.Row="0" Opacity="{Binding CarsVM.CarOpacified, Converter={StaticResource IntToOpacityConverter}, Source={StaticResource Locator}}" Fill="#FFD1E22A"  />
+            <Rectangle Grid.Row="0" 
+                       Opacity="{Binding SelectedCar, Converter={StaticResource IntToOpacityConverter}}" 
+                       Fill="#FFD1E22A"  />
             <ListBox Grid.Row="1" 
                      ItemsSource="{Binding Cars}" 
                      SelectedItem="{Binding SelectedCar, Mode=TwoWay}" >

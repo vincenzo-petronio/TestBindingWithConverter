@@ -20,9 +20,9 @@ namespace TestBindingWithConverter.Converters
                 {
                     opacity = 0.3;
                 }
-                System.Diagnostics.Debug.WriteLine("[IntToOpacityConverter] \t" + "Car Company: " + c.Company + ", Opacity: " +opacity);
             }
 
+            System.Diagnostics.Debug.WriteLine("[IntToOpacityConverter] \t" + "Rectangle Opacity: " + opacity);
             return opacity;
         }
 
