@@ -16,5 +16,10 @@ namespace TestBindingWithConverter.Views
         {
             InitializeComponent();
         }
+
+        private void PhoneApplicationPage_Unloaded(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = null;
+        }
     }
 }

@@ -13,7 +13,6 @@ namespace TestBindingWithConverter.ViewModels
     {
         private ObservableCollection<Car> cars;
         private Car selectedCar;
-        //private Car carOpacified;
 
         public CarsViewModel()
         {
@@ -25,7 +24,6 @@ namespace TestBindingWithConverter.ViewModels
                 // INIT
                 this.cars = new ObservableCollection<Car>();
                 this.selectedCar = null;
-                //this.carOpacified = null;
 
                 // FAKE DATA
                 for (int i = 1; i <= 10; i++)
@@ -65,43 +63,13 @@ namespace TestBindingWithConverter.ViewModels
 
             set
             {
-                if (value != selectedCar)
+                if (value != selectedCar && null != value)
                 {
                     selectedCar = value;
                     System.Diagnostics.Debug.WriteLine("[CARSVIEWMMODEL] \t" + "SET SelectedCar");
                     RaisePropertyChanged(() => SelectedCar);
-
-                    //if (SelectedCar.Id == 5)
-                    //{
-                    //    System.Diagnostics.Debug.WriteLine("[CARSVIEWMMODEL] \t" + "SET CarOpacified with Id=5");
-                    //    CarOpacified = SelectedCar;
-                    //}
-                    //else
-                    //{
-                    //    System.Diagnostics.Debug.WriteLine("[CARSVIEWMMODEL] \t" + "SET CarOpacified NULL");
-                    //    CarOpacified = null;
-                    //}
                 }
             }
         }
-
-        //public Car CarOpacified
-        //{
-        //    get
-        //    {
-        //        System.Diagnostics.Debug.WriteLine("[CARSVIEWMMODEL] \t" + "GET CarOpacified");
-        //        return carOpacified;
-        //    }
-
-        //    set
-        //    {
-        //        if (value != carOpacified)
-        //        {
-        //            carOpacified = value;
-        //            System.Diagnostics.Debug.WriteLine("[CARSVIEWMMODEL] \t" + "SET CarOpacified");
-        //            RaisePropertyChanged(() => CarOpacified);
-        //        }
-        //    }
-        //}
     }
 }
